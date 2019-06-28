@@ -1,0 +1,14 @@
+@import "../../../theme.scss";
+
+$avatar-size: 48px !default;
+
+.avatar,
+.avatar img {
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: 50%;
+}
+
+.avatar {
+  border: 1px solid $primary-color;
+}

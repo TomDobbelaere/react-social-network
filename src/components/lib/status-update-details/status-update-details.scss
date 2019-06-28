@@ -1,0 +1,9 @@
+@import "../../../theme.scss";
+
+.status-update-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}

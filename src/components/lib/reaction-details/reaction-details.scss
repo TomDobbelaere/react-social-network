@@ -1,0 +1,12 @@
+@import "../../../theme.scss";
+
+.reaction-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    height: 24px;
+    margin-right: 8px;
+  }
+}

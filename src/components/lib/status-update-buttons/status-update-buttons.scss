@@ -1,0 +1,18 @@
+@import "../../../theme.scss";
+
+.status-update-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__like,
+  &__comments {
+    flex-grow: 1;
+    background-color: $button-color;
+    text-align: center;
+    padding: 8px;
+  }
+
+  &__like {
+  }
+}

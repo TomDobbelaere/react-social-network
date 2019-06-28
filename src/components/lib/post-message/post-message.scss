@@ -1,0 +1,21 @@
+@import "../../../theme.scss";
+
+.post-message {
+  display: flex;
+  flex-direction: row;
+
+  padding: 8px;
+
+  .avatar {
+    margin-right: 16px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    .author-name {
+      margin-bottom: 8px;
+    }
+  }
+}
