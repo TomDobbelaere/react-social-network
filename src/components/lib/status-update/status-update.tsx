@@ -26,6 +26,7 @@ function StatusUpdate(props: StatusUpdateProps) {
       <StatusUpdateDetails
         reactionCount={props.statusUpdate.likes}
         commentCount={props.statusUpdate.comments.length}
+        onCommentCountClick={toggleCommentsExpansion}
       />
       <StatusUpdateButtons onClickComments={toggleCommentsExpansion} />
       {expandedComments ? (

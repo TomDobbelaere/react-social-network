@@ -6,14 +6,11 @@ export interface ReactionDetailsProps {
 }
 
 function ReactionDetails(props: ReactionDetailsProps) {
-  const text =
-    props.count === 1
-      ? "person is okay with this"
-      : "people are okay with this";
+  const text = props.count === 1 ? "person likes this" : "people like this";
 
   return (
     <div className="reaction-details">
-      <img src="ok.png" alt="ok" />
+      <img src="like.png" alt={text} />
       {props.count} {text}
     </div>
   );
