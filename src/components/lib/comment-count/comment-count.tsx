@@ -3,6 +3,7 @@ import "./comment-count.scss";
 
 export interface CommentCountProps {
   count: number;
+  onClick?: () => void;
 }
 
 function CommentCount(props: CommentCountProps) {
@@ -10,7 +11,14 @@ function CommentCount(props: CommentCountProps) {
 
   return (
     <div className="comment-count">
-      {props.count} {text}
+      <div
+        className={
+          "comment-count" + (props.count > 0 ? "__clickable" : "__unclickable")
+        }
+        onClick={props.count > 0 ? props.onClick : () => {}}
+      >
+        {props.count} {text}
+      </div>
     </div>
   );
 }

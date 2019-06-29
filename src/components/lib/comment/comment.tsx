@@ -1,7 +1,7 @@
 import React from "react";
 import "./comment.scss";
 import PostMessage from "../post-message/post-message";
-import { MComment } from "../../../models/news-feed.model";
+import MComment from "../../../models/comment.model";
 
 export interface CommentProps {
   comment: MComment;

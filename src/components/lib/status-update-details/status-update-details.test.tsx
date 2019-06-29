@@ -4,6 +4,6 @@ import StatusUpdateDetails from "./status-update-details";
 
 describe("when the component loads", () => {
   it("should render", () => {
-    render(<StatusUpdateDetails />);
+    render(<StatusUpdateDetails reactionCount={0} commentCount={0} />);
   });
 });

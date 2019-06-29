@@ -1,7 +1,7 @@
 import React from "react";
 import "./status-update-comments.scss";
 import Comment from "../comment/comment";
-import { MComment } from "../../../models/news-feed.model";
+import MComment from "../../../models/comment.model";
 
 export interface StatusUpdateCommentsProps {
   comments: MComment[];

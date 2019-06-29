@@ -4,15 +4,23 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 8px;
 
   &__like,
   &__comments {
-    flex-grow: 1;
-    background-color: $button-color;
+    flex-basis: 0;
+    flex: 1 0;
+    background-color: $button-background;
     text-align: center;
+    cursor: pointer;
     padding: 8px;
+
+    &:hover {
+      background-color: $button-background-hover;
+    }
   }
 
   &__like {
+    margin-right: 8px;
   }
 }

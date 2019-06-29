@@ -1,8 +1,9 @@
-$primary-color: #00885b;
-$button-color: #7ddaff;
-$primary-color-light: #fdff58;
-$primary-color-dark: #90cc00;
+$primary-color: #188edd;
+$secondary-color: #e7e7e7;
 
-$background-color: #d9f2ff;
-$background-color-light: #e7e7e7;
-$background-color-dark: #000a12;
+$button-background: $secondary-color;
+$button-background-hover: darken($button-background, 3%);
+
+$link-color: darken($primary-color, 10%);
+
+$background-color: #f0f0f0;

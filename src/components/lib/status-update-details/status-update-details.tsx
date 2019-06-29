@@ -6,13 +6,17 @@ import CommentCount from "../comment-count/comment-count";
 export interface StatusUpdateDetailsProps {
   reactionCount: number;
   commentCount: number;
+  onCommentCountClick?: () => void;
 }
 
 function StatusUpdateDetails(props: StatusUpdateDetailsProps) {
   return (
     <div className="status-update-details">
       <ReactionDetails count={props.reactionCount} />
-      <CommentCount count={props.commentCount} />
+      <CommentCount
+        count={props.commentCount}
+        onClick={props.onCommentCountClick}
+      />
     </div>
   );
 }

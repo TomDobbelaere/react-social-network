@@ -1,1 +1,9 @@
 @import "../../../theme.scss";
+
+.comment-count {
+  &__clickable {
+    text-decoration: underline;
+    cursor: pointer;
+    color: $link-color;
+  }
+}

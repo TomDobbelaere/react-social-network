@@ -4,6 +4,6 @@ import { render } from "@testing-library/react";
 
 describe("when the component loads", () => {
   it("should render", () => {
-    render(<PostMessage text="" />);
+    render(<PostMessage avatarUrl="" content="" name="" />);
   });
 });

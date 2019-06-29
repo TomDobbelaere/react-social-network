@@ -1,7 +1,7 @@
 import React from "react";
 import "./status-update-body.scss";
 import PostMessage from "../post-message/post-message";
-import { MPerson } from "../../../models/news-feed.model";
+import MPerson from "../../../models/person.model";
 
 export interface StatusUpdateBodyProps {
   author: MPerson;

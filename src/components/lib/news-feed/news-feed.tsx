@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import "./news-feed.scss";
-import { MStatusUpdate, MPerson } from "../../../models/news-feed.model";
 import StatusUpdate from "../status-update/status-update";
+import MPerson from "../../../models/person.model";
+import MStatusUpdate from "../../../models/status-update.model";
 
 /* Big moment, test data below */
 const annie: MPerson = {
+  id: 1,
   firstName: "Annie",
   lastName: "McBeth",
   avatarUrl: "placeholder.jpg"
 };
 
 const jake: MPerson = {
+  id: 2,
   firstName: "Jake",
   lastName: "The Man",
   avatarUrl: "placeholder2.jpg"
 };
 
-const newsFeed: MStatusUpdate[] = [
+/*const newsFeed: MStatusUpdate[] = [
   {
     id: 1,
     author: annie,
@@ -48,7 +51,7 @@ const newsFeed: MStatusUpdate[] = [
       }
     ]
   }
-];
+];*/
 
 export interface NewsFeedProps {}
 
@@ -56,7 +59,6 @@ function NewsFeed(props: NewsFeedProps) {
   const [statusUpdates, setStatusUpdates] = useState([] as MStatusUpdate[]);
 
   function test() {
-    console.log("clicked");
     const clone = JSON.parse(JSON.stringify(statusUpdates));
 
     const comments = [];
