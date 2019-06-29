@@ -2,6 +2,7 @@
   "name": "react-social-network",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://diga.link/ReactMobileTest",
   "dependencies": {
     "@testing-library/react": "^8.0.1",
     "@types/jest": "24.0.15",
