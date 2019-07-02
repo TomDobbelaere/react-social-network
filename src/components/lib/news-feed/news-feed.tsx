@@ -58,6 +58,29 @@ export interface NewsFeedProps {}
 function NewsFeed(props: NewsFeedProps) {
   const [statusUpdates, setStatusUpdates] = useState([] as MStatusUpdate[]);
 
+  fetch("http://localhost:3001/api/statusUpdate")
+    .then(res => {
+      return res.json();
+    })
+    .then(resJson => {
+      const fetchedStatusUpdates = resJson.map((su: any) => {
+        return {
+          id: su.statusUpdateId,
+          likes: su.likes,
+          content: su.content,
+          comments: [],
+          author: {
+            id: su.authorId,
+            avatarUrl: su.avatarUrl,
+            firstName: su.firstName,
+            lastName: su.lastName
+          } as MPerson
+        } as MStatusUpdate;
+      });
+
+      setStatusUpdates(fetchedStatusUpdates);
+    });
+
   function test() {
     const clone = JSON.parse(JSON.stringify(statusUpdates));
 

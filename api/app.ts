@@ -8,6 +8,8 @@ const server: fastify.FastifyInstance<
   ServerResponse
 > = fastify({});
 
+server.register(require("fastify-cors"), { origin: "*" });
+
 server.get("/api/statusUpdate", async (req, res) => {
   const statusUpdates = await StatusUpdates.getAll();
   res.code(200).send(statusUpdates);
@@ -18,7 +20,7 @@ server.get("/api/statusUpdate/:id/comments", async (req, res) => {
   res.code(200).send(comments);
 });
 
-server.listen(3000, (err, address) => {
+server.listen(3001, (err, address) => {
   if (err) throw err;
   console.log(`server listening on ${address}`);
 });
