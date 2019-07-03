@@ -9,7 +9,10 @@ export interface AvatarProps {
 function Avatar(props: AvatarProps) {
   return (
     <div className="avatar">
-      <img src={props.url} alt={props.alt || ""} />
+      <img
+        src={"http://localhost:3001/static/" + props.url}
+        alt={props.alt || ""}
+      />
     </div>
   );
 }

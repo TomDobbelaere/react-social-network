@@ -2,7 +2,11 @@ import * as Knex from "knex";
 
 export async function seed(knex: Knex): Promise<any> {
   // Deletes ALL existing entries
+  await knex("Comment").del();
+  await knex("Like").del();
+  await knex("StatusUpdate").del();
   await knex("Person").del();
+
   await knex("Person").insert([
     { id: 1, firstName: "Donald", lastName: "Trump", avatarUrl: "trump.jpg" },
     {
@@ -13,7 +17,6 @@ export async function seed(knex: Knex): Promise<any> {
     }
   ]);
 
-  await knex("StatusUpdate").del();
   await knex("StatusUpdate").insert([
     {
       id: 1,
@@ -24,10 +27,7 @@ export async function seed(knex: Knex): Promise<any> {
     { id: 2, authorId: 2, content: "I kinda miss Andy, tbh.." }
   ]);
 
-  await knex("Like").del();
   await knex("Like").insert([{ id: 1, personId: 2, StatusUpdateId: 1 }]);
-
-  await knex("Comment").del();
   await knex("Comment").insert([
     {
       id: 1,

@@ -5,6 +5,7 @@ import StatusUpdateDetails from "../status-update-details/status-update-details"
 import StatusUpdateButtons from "../status-update-buttons/status-update-buttons";
 import StatusUpdateComments from "../status-update-comments/status-update-comments";
 import MStatusUpdate from "../../../models/status-update.model";
+import StatusUpdateService from "../../../services/status-update.service";
 
 export interface StatusUpdateProps {
   statusUpdate: MStatusUpdate;
@@ -14,6 +15,10 @@ function StatusUpdate(props: StatusUpdateProps) {
   const [expandedComments, setExpandedComments] = useState(false);
 
   function toggleCommentsExpansion() {
+    if (!expandedComments) {
+      StatusUpdateService.getCommentsForUpdate(props.statusUpdate.id);
+    }
+
     setExpandedComments(!expandedComments);
   }
 

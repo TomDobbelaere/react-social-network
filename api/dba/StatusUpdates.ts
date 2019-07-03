@@ -4,7 +4,7 @@ class StatusUpdates {
   public async getAll() {
     return db("StatusUpdate")
       .leftJoin("Person", {
-        "StatusUpdate.authorId": "Person.id"
+        "Person.id": "StatusUpdate.authorId"
       })
       .leftJoin("Like", { "Like.statusUpdateId": "StatusUpdate.id" })
       .select(
@@ -15,7 +15,8 @@ class StatusUpdates {
         "StatusUpdate.content",
         "StatusUpdate.id as statusUpdateId"
       )
-      .count("Like.id as likes");
+      .count("Like.id as likes")
+      .groupBy("StatusUpdate.id");
   }
 
   public async getComments(statusUpdateId: number) {

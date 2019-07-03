@@ -1,6 +1,7 @@
 import fastify from "fastify";
 import { Server, IncomingMessage, ServerResponse } from "http";
 import StatusUpdates from "./dba/StatusUpdates";
+import path from "path";
 
 const server: fastify.FastifyInstance<
   Server,
@@ -9,6 +10,11 @@ const server: fastify.FastifyInstance<
 > = fastify({});
 
 server.register(require("fastify-cors"), { origin: "*" });
+
+server.register(require("fastify-static"), {
+  root: path.join(__dirname, "static"),
+  prefix: "/static/"
+});
 
 server.get("/api/statusUpdate", async (req, res) => {
   const statusUpdates = await StatusUpdates.getAll();
